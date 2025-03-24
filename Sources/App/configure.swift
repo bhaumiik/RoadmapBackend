@@ -15,7 +15,6 @@ public func configure(_ app: Application) async throws {
     app.migrations.add(RoadmapFeature.Create())
     app.logger.logLevel = .debug
     app.http.server.configuration.hostname = "0.0.0.0"
-    app.http.server.configuration.port = Int(Environment.get("APP_PORT") ?? "8080") ?? 8080
 
     try await app.autoMigrate()
 
